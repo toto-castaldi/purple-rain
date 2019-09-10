@@ -12,7 +12,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Purple Rain',
       template: 'src/index.html',
-
+      repo: 'https://github.com/toto-castaldi/purple-rain'
     })
   ]
 

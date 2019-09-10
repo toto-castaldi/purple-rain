@@ -3,6 +3,7 @@ import * as sound from 'p5/lib/addons/p5.sound';
 import './style.css';
 import { Drop } from './drop.js';
 import rainWave from './401276__inspectorj__rain-moderate-b.wav';
+import '../node_modules/github-fork-ribbon-css/gh-fork-ribbon.css';
 
 new p5((sketch) => {
 
