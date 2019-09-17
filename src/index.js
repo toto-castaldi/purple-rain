@@ -4,12 +4,27 @@ import './style.css';
 import { Drop } from './drop.js';
 import rainWave from './401276__inspectorj__rain-moderate-b.wav';
 import '../node_modules/github-fork-ribbon-css/gh-fork-ribbon.css';
+import { saveAs } from 'file-saver';
+
 
 new p5((sketch) => {
 
     const drops = [];
 
     let rainSound;
+    let frameRateVisible = true;
+    let playSound = true;
+
+    sketch.keyPressed = () => {
+        if (sketch.keyCode === 70) frameRateVisible = !frameRateVisible; //F
+        if (sketch.keyCode === 83) playSound = !playSound; //S
+        if (sketch.keyCode === 73) { //I
+            var canvas = document.getElementsByTagName('canvas')[0];
+            canvas.toBlob(function(blob) {
+                saveAs(blob, "sketch.png");
+            });
+        }
+    }
 
     sketch.preload = () => {
         rainSound = sketch.loadSound(rainWave);
@@ -41,8 +56,10 @@ new p5((sketch) => {
     };
 
     sketch.draw = () => {
-        if (!rainSound.isPlaying()) {
-            rainSound.play();
+        if (rainSound.isPlaying()) {
+            if (!playSound) rainSound.stop();
+        } else {
+            if (playSound) rainSound.play();
         }
 
         //reset
@@ -54,7 +71,7 @@ new p5((sketch) => {
             drop.show();
         });
 
-        printFrameRate({});
+        printFrameRate({ isVisible : () => frameRateVisible});
     };
 });
 
