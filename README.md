@@ -5,9 +5,9 @@ Inspired by a Coding Challenge of [Daniel Shiffman](https://shiffman.net/)
 
 [Here is the online version](https://toto-castaldi.github.io/purple-rain/index.html).
 
-Press 'F' button to hide/show the FPS info
-Press 'S' button to stop/play sounds
-Press 'I' button to save the Rain to your Desktop as an png image
+Press 'F' button to hide/show the FPS info  
+Press 'S' button to stop/play sounds  
+Press 'I' button to save the Rain to your Desktop as an png image  
 
 
 ### Develop
